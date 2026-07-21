@@ -1,0 +1,36 @@
+Preguntas de análisis
+
+1. ¿Cuál fue el escenario más difícil de automatizar y por qué?
+TC015 fue el más difícil, ya que combina múltiples flujos previos (login, fechas, pasajeros, búsqueda, selección de destino y checkout) en una sola secuencia larga. 
+El mayor reto fue el botón "Pay now" del checkout: pese a validar exhaustivamente que todos los campos (nombre, email, SSN, teléfono), la imagen subida y el checkbox de 
+términos quedaban correctamente registrados en el estado de React (clases, valores, checkbox seleccionado), el botón permaneció deshabilitado — comportamiento que tampoco se 
+reproducía haciéndolo manualmente. Se documentó como una limitación conocida del sitio demo en lugar de forzarlo, para no falsear el resultado de la prueba.
+
+2. ¿Qué ventajas ofrece utilizar keywords reutilizables?
+ Permiten evitar duplicar código entre distintos casos de prueba (por ejemplo, Seleccionar fecha de salida se usó en 5 escenarios), facilitan el mantenimiento (un cambio en 
+ el flujo solo se corrige en un lugar), mejoran la legibilidad de los test cases, y agilizan la creación de nuevos escenarios al combinar bloques ya probados.
+
+3. ¿Qué diferencia existe entre utilizar Sleep y una espera explícita?
+Sleep detiene la ejecución un tiempo fijo sin importar si el elemento ya está listo o no, lo que genera pruebas más lentas o inestables (si el tiempo es insuficiente, falla; 
+si es excesivo, se pierde tiempo). Las esperas explícitas (Wait Until Element Is Visible, Wait Until Element Is Enabled) verifican activamente una condición y continúan en cuanto 
+se cumple, haciendo las pruebas más rápidas y confiables ante variaciones de carga.
+
+4. ¿Qué localizadores fueron más estables durante la automatización?
+ Los basados en texto visible (//span[text()="..."], //label[text()="..."]) y en atributos semánticos como data-react-toolbox fueron los más estables. Los menos confiables fueron 
+ los que dependían de clases con hashes generados dinámicamente (WhiteDropDown__inputInputElement___2wTPU), que solo funcionaron usando contains() para ignorar la parte variable del hash.
+
+5. ¿Qué validaciones se utilizaron para comprobar que las acciones fueron exitosas?
+Element Should Be Visible, Element Should Be Enabled, Should Not Be Empty, Should Contain, Element Text Should Be, y comparaciones de valores obtenidos con Get Value/Get Text. Para casos 
+negativos, se usó Run Keyword And Ignore Error para registrar el comportamiento sin detener la ejecución.
+
+6. ¿Qué sucedió al intentar ingresar un rango de fechas incorrecto?
+ La aplicación no bloqueó la selección ni mostró un mensaje de error. En su lugar, el calendario ajustó automáticamente la fecha de salida para mantener un rango válido, sin notificar 
+ al usuario del cambio realizado sobre una fecha que él mismo ya había seleccionado.
+
+7. ¿Cómo podría aplicarse un enfoque basado en datos para probar diferentes usuarios, fechas y cantidades de pasajeros?
+ Tal como se hizo en este proyecto, manteniendo los datos de prueba en un archivo Excel externo (separado por hoja/test case), y usando una librería personalizada para inyectarlos como 
+ variables de suite. Esto permite ejecutar los mismos keywords con distintos conjuntos de datos sin modificar el código, facilitando pruebas con múltiples combinaciones de usuarios, fechas y pasajeros.
+
+8. ¿Qué cambios realizaría para que las pruebas puedan ejecutarse en diferentes navegadores?
+ Parametrizar el navegador como variable (similar a ${urlnav}) en lugar de tenerlo fijo en Open Browser ${urlnav} chrome, permitiendo pasarlo por línea de comandos o Excel. También se 
+ podría usar Selenium Grid o un WebDriver remoto para ejecutar en paralelo contra Chrome, Firefox y Edge, e idealmente integrar esto en un pipeline CI con una matriz de navegadores.
