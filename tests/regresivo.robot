@@ -10,110 +10,58 @@ ${hoja}                 regresivo
 
 *** Test Cases ***
 
-TC001 - Validar carga de la página principal
-    [Tags]    TC001
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Validar carga de la página principal 
-
-TC002 - Validar los elementos del formulario de búsqueda
-    [Tags]    TC002
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Validar los elementos del formulario de búsqueda
-
-TC003 - Iniciar sesión con credenciales
-    [Tags]    TC003
+TC001 - Login exitoso
+    [Tags]    TC001    login    positivo
     [Teardown]    Close Browser
     Abrir navegador y ingresar a la web
     Iniciar sesión con credenciales válidas
+    Validar acceso exitoso al inventario
 
-TC004 - Validar el saludo después del inicio de sesión
-    [Tags]    TC004
+TC002 - Agregar producto al carrito
+    [Tags]    TC002    carrito    positivo
     [Teardown]    Close Browser
     Abrir navegador y ingresar a la web
     Iniciar sesión con credenciales válidas
-    Validar saludo del usuario autenticado
+    Agregar producto al carrito
+    Validar producto agregado al carrito
 
-TC005 - Cerrar el formulario de inicio de sesión
-    [Tags]    TC005
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Cerrar formulario de inicio de sesión sin ingresar datos
-
-TC006 - Seleccionar una fecha de salida
-    [Tags]    TC006
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Seleccionar fecha de salida
-
-TC007 - Seleccionar una fecha de regreso
-    [Tags]    TC007
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Seleccionar fecha de salida
-    Seleccionar fecha de regreso
-
-TC008 - Validar un rango de fechas incorrecto
-    [Tags]    TC008
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Seleccionar fecha de salida
-    Intentar seleccionar fecha de regreso anterior a la salida
-
-TC009 - Cambiar la cantidad de pasajeros adultos
-    [Tags]    TC009
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Seleccionar cantidad de adultos
-
-TC010 - Validar los límites del selector de pasajeros
-    [Tags]    TC010
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Validar límites del selector de niños
-
-TC011 - Buscar viajes con datos válidos
-    [Tags]    TC011
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Seleccionar fecha de salida
-    Seleccionar fecha de regreso
-    Seleccionar cantidad de adultos
-    Buscar viajes con datos válidos
-
-TC012 - Validar los resultados de búsqueda
-    [Tags]    TC012
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Buscar viajes con datos válidos
-    Validar resultados de búsqueda
-
-TC013 - Seleccionar un destino
-    [Tags]    TC013
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Buscar viajes con datos válidos
-    Seleccionar un destino
-
-TC014 - Validar la información del viaje seleccionado
-    [Tags]    TC014
-    [Teardown]    Close Browser
-    Abrir navegador y ingresar a la web
-    Buscar viajes con datos válidos
-    Seleccionar un destino
-    Validar información del viaje seleccionado
-
-TC015 - Completar el flujo principal de reservación
-    [Tags]    TC015
+TC003 - Intentar proceder al checkout con el carrito vacío
+    [Tags]    TC003    carrito    negativo
     [Teardown]    Close Browser
     Abrir navegador y ingresar a la web
     Iniciar sesión con credenciales válidas
-    Seleccionar fecha de salida
-    Seleccionar fecha de regreso
-    Seleccionar cantidad de adultos
-    Buscar viajes con datos válidos
-    Seleccionar un destino
-    Validar información del viaje seleccionado
-    Completar el flujo principal de reservación
+    Ir al carrito sin agregar productos
+    Intentar proceder al checkout con carrito vacío
 
+TC004 - Eliminar producto del carrito
+    [Tags]    TC004    carrito    positivo
+    [Teardown]    Close Browser
+    Abrir navegador y ingresar a la web
+    Iniciar sesión con credenciales válidas
+    Agregar producto al carrito
+    Validar producto agregado al carrito
+    Eliminar producto del carrito
+    Validar producto eliminado del carrito
+
+TC005 - Checkout compra exitosa
+    [Tags]    TC005    checkout    positivo
+    [Teardown]    Close Browser
+    Abrir navegador y ingresar a la web
+    Iniciar sesión con credenciales válidas
+    Agregar producto al carrito
+    Validar producto agregado al carrito
+    Proceder al checkout con producto en el carrito
+    Completar información de envío
+    Finalizar compra
+    Validar compra exitosa
+
+TC006 - Checkout código postal vacío
+    [Tags]    TC006    checkout    negativo
+    [Teardown]    Close Browser
+    Abrir navegador y ingresar a la web
+    Iniciar sesión con credenciales válidas
+    Agregar producto al carrito
+    Validar producto agregado al carrito
+    Proceder al checkout con producto en el carrito
+    Completar información de envío sin código postal
+    Validar error por código postal vacío
