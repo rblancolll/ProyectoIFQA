@@ -1,0 +1,10 @@
+cat > .gitignore << 'EOF'
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+consola_log.txt
+EOF
+result/
+results/
+Resource/

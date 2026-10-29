@@ -1,0 +1,2222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.9 on win32)" generated="2026-08-12T00:43:48.581169" rpa="false" schemaversion="5">
+<suite id="s1" name="Regresivo" source="C:\Users\blanc\qa-robot-selenium\tests\regresivo.robot">
+<test id="s1-t1" name="TC001 - Login exitoso" line="13">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:50.079431" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:43:50.078430" elapsed="1.567662"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:43:51.647092" elapsed="0.386713"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:50.077433" elapsed="1.956372"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.034804" elapsed="0.046916"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.082723" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.081720" elapsed="0.191971"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.275666" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.274670" elapsed="0.083194"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:43:52.358863" level="INFO">${nombre} = evidencia-TC001 - Login exitoso-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.358863" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.459704" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC001%20-%20Login%20exitoso-3.png"&gt;&lt;img src="evidencia-TC001%20-%20Login%20exitoso-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:43:52.459704" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC001 - Login exitoso-3.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.360379" elapsed="0.100324"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:43:52.461785" level="INFO">Length is 77.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.460703" elapsed="0.001082"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:43:52.463782" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:43:52.462781" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:52.358863" elapsed="0.104919"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.464786" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.463782" elapsed="0.167010"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:52.034804" elapsed="0.595988"/>
+</kw>
+<kw name="Validar acceso exitoso al inventario" owner="keywords">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>inventory.html</arg>
+<arg>30s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.632816" elapsed="0.007515"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="title" and text()="Products"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.641345" elapsed="0.059498"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.727901" level="INFO">Element '//span[@class="title" and text()="Products"]' is displayed.</msg>
+<arg>//span[@class="title" and text()="Products"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.701854" elapsed="0.026047"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.751488" level="INFO">Element '//div[@class="inventory_list"]' is displayed.</msg>
+<arg>//div[@class="inventory_list"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.728899" elapsed="0.022589"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:52.764005" level="INFO">Current page does not contain element '//h3[@data-test="error"]'.</msg>
+<arg>//h3[@data-test="error"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.751488" elapsed="0.012517"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:43:52.766005" level="INFO">${nombre} = evidencia-TC001 - Login exitoso-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.765008" elapsed="0.000997"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:53.000804" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC001%20-%20Login%20exitoso-4.png"&gt;&lt;img src="evidencia-TC001%20-%20Login%20exitoso-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:43:53.000804" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC001 - Login exitoso-4.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:43:52.766005" elapsed="0.234799"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:43:53.001810" level="INFO">Length is 77.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:43:53.000804" elapsed="0.001006"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:43:53.001810" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:43:53.001810" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:52.764005" elapsed="0.238802"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:52.631805" elapsed="0.371002"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:43:53.002807" elapsed="2.249934"/>
+</kw>
+<tag>login</tag>
+<tag>positivo</tag>
+<tag>TC001</tag>
+<status status="PASS" start="2026-08-12T00:43:50.064907" elapsed="5.188705"/>
+</test>
+<test id="s1-t2" name="TC002 - Agregar producto al carrito" line="20">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:55.279654" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:43:55.279654" elapsed="1.870632"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.150286" elapsed="0.028073"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:55.278652" elapsed="1.899707"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.179363" elapsed="0.093018"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:57.273397" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.272381" elapsed="0.155950"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:57.429338" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.428331" elapsed="0.088520"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:43:57.518848" level="INFO">${nombre} = evidencia-TC002 - Agregar producto al carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.517849" elapsed="0.000999"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:57.627106" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-4.png"&gt;&lt;img src="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:43:57.627106" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC002 - Agregar producto al carrito-4.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.518848" elapsed="0.108258"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:43:57.628109" level="INFO">Length is 91.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.627106" elapsed="0.001003"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:43:57.628109" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:43:57.628109" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:57.517849" elapsed="0.110260"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:57.629107" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.628109" elapsed="0.113420"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:57.179363" elapsed="0.562166"/>
+</kw>
+<kw name="Agregar producto al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="inventory_list"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.742547" elapsed="0.033584"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.777174" elapsed="0.024091"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:57.801265" level="INFO">Clicking element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]'.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.801265" elapsed="0.068019"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:43:57.870808" level="INFO">${nombre} = evidencia-TC002 - Agregar producto al carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.870808" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:58.051651" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-5.png"&gt;&lt;img src="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:43:58.052627" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC002 - Agregar producto al carrito-5.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:43:57.871824" elapsed="0.180803"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:43:58.053623" level="INFO">Length is 91.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.052627" elapsed="0.000996"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:43:58.054623" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:43:58.053623" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:57.870283" elapsed="0.184340"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:57.742547" elapsed="0.312076"/>
+</kw>
+<kw name="Validar producto agregado al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.055621" elapsed="0.018040"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:58.092199" level="INFO">${badge} = 1</msg>
+<var>${badge}</var>
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.074660" elapsed="0.017539"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${badge}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.092199" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:43:58.093197" level="INFO">Cantidad en el carrito: 1</msg>
+<arg>Cantidad en el carrito: ${badge}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.092199" elapsed="0.000998"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:43:58.093197" level="INFO">${nombre} = evidencia-TC002 - Agregar producto al carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.093197" elapsed="0.000999"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:43:58.309671" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-6.png"&gt;&lt;img src="evidencia-TC002%20-%20Agregar%20producto%20al%20carrito-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:43:58.309671" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC002 - Agregar producto al carrito-6.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.094196" elapsed="0.215475"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:43:58.310674" level="INFO">Length is 91.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.309671" elapsed="0.001514"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:43:58.311185" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:43:58.311185" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:58.093197" elapsed="0.217988"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:43:58.055621" elapsed="0.255564"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:43:58.312193" elapsed="2.226695"/>
+</kw>
+<tag>carrito</tag>
+<tag>positivo</tag>
+<tag>TC002</tag>
+<status status="PASS" start="2026-08-12T00:43:55.270645" elapsed="5.268243"/>
+</test>
+<test id="s1-t3" name="TC003 - Intentar proceder al checkout con el carrito vacío" line="28">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:00.570613" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:00.569602" elapsed="1.818541"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.389140" elapsed="0.041359"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:00.568602" elapsed="1.861897"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.432836" elapsed="0.073415"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:02.507250" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.507250" elapsed="0.173024"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:02.680786" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.680786" elapsed="0.089728"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:02.773004" level="INFO">${nombre} = evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.772007" elapsed="0.000997"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:02.874686" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-5.png"&gt;&lt;img src="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:02.874686" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-5.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.773004" elapsed="0.101682"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:02.875689" level="INFO">Length is 114.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.874686" elapsed="0.001003"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:02.876686" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:02.875689" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:02.770514" elapsed="0.106172"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:02.876686" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.876686" elapsed="0.119974"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:02.430499" elapsed="0.566161"/>
+</kw>
+<kw name="Ir al carrito sin agregar productos" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="inventory_list"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:02.997656" elapsed="0.035819"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.045007" level="INFO">Current page does not contain element '//span[@data-test="shopping-cart-badge"]'.</msg>
+<arg>//span[@data-test="shopping-cart-badge"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.034475" elapsed="0.010532"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.045007" level="INFO">Clicking element '//a[@data-test="shopping-cart-link"]'.</msg>
+<arg>//a[@data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.045007" elapsed="0.093192"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>cart.html</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.139200" elapsed="0.005522"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.146723" level="INFO">${nombre} = evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.145725" elapsed="0.000998"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.285111" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-6.png"&gt;&lt;img src="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:03.285111" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-6.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.146723" elapsed="0.138388"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.286115" level="INFO">Length is 114.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.286115" elapsed="0.000000"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:03.287116" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:03.286115" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:03.145725" elapsed="0.141391"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:02.997656" elapsed="0.289460"/>
+</kw>
+<kw name="Intentar proceder al checkout con carrito vacío" owner="keywords">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.296166" level="INFO">Current page does not contain element '//div[@data-test="inventory-item-name"]'.</msg>
+<arg>//div[@data-test="inventory-item-name"]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.288115" elapsed="0.008051"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.297166" level="INFO">Confirmado: el carrito no contiene productos antes de intentar el checkout.</msg>
+<arg>Confirmado: el carrito no contiene productos antes de intentar el checkout.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.296166" elapsed="0.001000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.317228" level="INFO">Element '//button[@data-test="checkout"]' is displayed.</msg>
+<arg>//button[@data-test="checkout"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.297166" elapsed="0.020062"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>//button[@data-test="checkout"]</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.318225" elapsed="0.024358"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.342583" level="INFO">Clicking element '//button[@data-test="checkout"]'.</msg>
+<arg>//button[@data-test="checkout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.342583" elapsed="0.051616"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.395707" level="INFO">${nombre} = evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.395707" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.512205" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-7.png"&gt;&lt;img src="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:03.512205" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-7.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.395707" elapsed="0.116498"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.513250" level="INFO">Length is 114.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.512205" elapsed="0.001045"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:03.514265" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:03.513250" elapsed="0.001015"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:03.395195" elapsed="0.119070"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-one.html</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.515241" elapsed="0.003966"/>
+</kw>
+<msg time="2026-08-12T00:44:03.519207" level="INFO">${avanzo} = True</msg>
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-one.html</arg>
+<arg>5s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.514265" elapsed="0.004942"/>
+</kw>
+<if>
+<branch type="IF" condition="${avanzo}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.520724" level="WARN">Comportamiento detectado: el sistema PERMITE avanzar al checkout con el carrito vacío (no bloquea la acción). Se documenta como hallazgo/riesgo para el reporte.</msg>
+<arg>Comportamiento detectado: el sistema PERMITE avanzar al checkout con el carrito vacío (no bloquea la acción). Se documenta como hallazgo/riesgo para el reporte.</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.519207" elapsed="0.001517"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:03.519207" elapsed="0.001517"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Comportamiento detectado: el sistema NO permitió avanzar al checkout con el carrito vacío.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:03.521734" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-08-12T00:44:03.520724" elapsed="0.001010"/>
+</branch>
+<status status="PASS" start="2026-08-12T00:44:03.519207" elapsed="0.002527"/>
+</if>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.521734" level="INFO">${nombre} = evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.521734" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:03.597964" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-8.png"&gt;&lt;img src="evidencia-TC003%20-%20Intentar%20proceder%20al%20checkout%20con%20el%20carrito%20vac%C3%ADo-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:03.598974" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC003 - Intentar proceder al checkout con el carrito vacío-8.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.522759" elapsed="0.076215"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:03.598974" level="INFO">Length is 114.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.598974" elapsed="0.001566"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:03.601609" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:03.600540" elapsed="0.001069"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:03.521734" elapsed="0.079875"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:03.287116" elapsed="0.314493"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:44:03.602581" elapsed="2.233184"/>
+</kw>
+<tag>carrito</tag>
+<tag>negativo</tag>
+<tag>TC003</tag>
+<status status="PASS" start="2026-08-12T00:44:00.559030" elapsed="5.277591"/>
+</test>
+<test id="s1-t4" name="TC004 - Eliminar producto del carrito" line="36">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:05.859650" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:05.859650" elapsed="1.823098"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:44:07.683764" elapsed="0.040877"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:05.859650" elapsed="1.866007"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:07.727641" elapsed="0.066501"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:07.799151" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:07.796161" elapsed="0.177440"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:07.974597" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:07.973601" elapsed="0.105893"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.081008" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.080496" elapsed="0.000512"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.182940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-7.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:08.183940" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-7.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.082025" elapsed="0.101915"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.183940" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.183940" elapsed="0.000000"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:08.184939" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:08.183940" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.079494" elapsed="0.105445"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.184939" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.184939" elapsed="0.121028"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:07.726642" elapsed="0.579325"/>
+</kw>
+<kw name="Agregar producto al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="inventory_list"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.306966" elapsed="0.032289"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.339255" elapsed="0.025595"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.364850" level="INFO">Clicking element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]'.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.364850" elapsed="0.069684"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.436532" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.435536" elapsed="0.000996"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.607817" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-8.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:08.607817" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-8.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.436532" elapsed="0.171285"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.607817" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.607817" elapsed="0.000999"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:08.608816" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:08.608816" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.435536" elapsed="0.173280"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.306966" elapsed="0.301850"/>
+</kw>
+<kw name="Validar producto agregado al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.610325" elapsed="0.018376"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.644760" level="INFO">${badge} = 1</msg>
+<var>${badge}</var>
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.628701" elapsed="0.016059"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${badge}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.644760" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.645758" level="INFO">Cantidad en el carrito: 1</msg>
+<arg>Cantidad en el carrito: ${badge}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.645758" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.646757" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.645758" elapsed="0.000999"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.791443" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-9.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:08.791443" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-9.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.646757" elapsed="0.144686"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:08.792441" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.791443" elapsed="0.000998"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:08.794433" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:08.793434" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.645758" elapsed="0.148675"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.608816" elapsed="0.185617"/>
+</kw>
+<kw name="Eliminar producto del carrito" owner="keywords">
+<kw name="Ir al carrito" owner="keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:08.796462" level="INFO">Opening url 'https://www.saucedemo.com/cart.html'</msg>
+<arg>${urlnav}cart.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.796462" elapsed="0.191972"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>cart.html</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:08.989435" elapsed="0.051111"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.069092" level="INFO">Element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]' is displayed.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.040546" elapsed="0.028546"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.070630" level="INFO">Producto confirmado en el carrito: Sauce Labs Backpack</msg>
+<arg>Producto confirmado en el carrito: ${nombre_producto}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.069092" elapsed="0.001538"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.071642" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.070630" elapsed="0.001012"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.192379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-10.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:09.192379" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-10.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.071642" elapsed="0.120737"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.193375" level="INFO">Length is 94.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.192379" elapsed="0.000996"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:09.194383" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:09.193375" elapsed="0.001008"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:09.070630" elapsed="0.123753"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.795435" elapsed="0.398948"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:remove-sauce-labs-backpack</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.194383" elapsed="0.026651"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.222073" level="INFO">${eliminado} = False</msg>
+<var>${eliminado}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.222073" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.223079" level="INFO">Clicking element 'id:remove-sauce-labs-backpack'.</msg>
+<arg>id:remove-sauce-labs-backpack</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.223079" elapsed="0.074875"/>
+</kw>
+<arg>Click Element</arg>
+<arg>id:remove-sauce-labs-backpack</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.222073" elapsed="0.075881"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>id:remove-sauce-labs-backpack</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.298946" elapsed="0.007196"/>
+</kw>
+<msg time="2026-08-12T00:44:09.307140" level="INFO">${eliminado} = True</msg>
+<var>${eliminado}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id:remove-sauce-labs-backpack</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.297954" elapsed="0.009186"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.307140" level="INFO">Exiting for loop altogether.</msg>
+<arg>${eliminado}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.307140" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Execute Javascript</arg>
+<arg>document.getElementById('remove-sauce-labs-backpack').click();</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:09.307140" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${eliminado}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id:remove-sauce-labs-backpack</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:09.307140" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>${eliminado}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:09.308133" elapsed="0.000000"/>
+</kw>
+<var name="${intento}">0</var>
+<status status="PASS" start="2026-08-12T00:44:09.222073" elapsed="0.086060"/>
+</iter>
+<var>${intento}</var>
+<value>3</value>
+<status status="PASS" start="2026-08-12T00:44:09.222073" elapsed="0.086060"/>
+</for>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${eliminado}</arg>
+<arg>Fail</arg>
+<arg>No se pudo eliminar el producto tras varios intentos</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.308133" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.309140" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.309140" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.401341" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-11.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:09.401341" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-11.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.309140" elapsed="0.092201"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.403350" level="INFO">Length is 94.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.402351" elapsed="0.000999"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:09.404360" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:09.403350" elapsed="0.001010"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:09.308133" elapsed="0.097246"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:08.795435" elapsed="0.609944"/>
+</kw>
+<kw name="Validar producto eliminado del carrito" owner="keywords">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.412904" level="INFO">Current page does not contain element 'id:remove-sauce-labs-backpack'.</msg>
+<arg>id:remove-sauce-labs-backpack</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.405379" elapsed="0.007525"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.413903" level="INFO">Confirmado: el carrito quedó vacío tras eliminar "Sauce Labs Backpack".</msg>
+<arg>Confirmado: el carrito quedó vacío tras eliminar "${nombre_producto}".</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.412904" elapsed="0.000999"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.414903" level="INFO">${nombre} = evidencia-TC004 - Eliminar producto del carrito-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.413903" elapsed="0.001000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:09.496193" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-12.png"&gt;&lt;img src="evidencia-TC004%20-%20Eliminar%20producto%20del%20carrito-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:09.496193" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC004 - Eliminar producto del carrito-12.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.414903" elapsed="0.081290"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:09.497199" level="INFO">Length is 94.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.496193" elapsed="0.001006"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:09.498191" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:09.497199" elapsed="0.000992"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:09.413903" elapsed="0.084288"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:09.405379" elapsed="0.092812"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:44:09.498191" elapsed="2.271150"/>
+</kw>
+<tag>carrito</tag>
+<tag>positivo</tag>
+<tag>TC004</tag>
+<status status="PASS" start="2026-08-12T00:44:05.849133" elapsed="5.920208"/>
+</test>
+<test id="s1-t5" name="TC005 - Checkout compra exitosa" line="46">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:11.797944" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:11.796946" elapsed="1.948306"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:44:13.745252" elapsed="0.047639"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:11.796946" elapsed="1.996943"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:13.794892" elapsed="0.065755"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:13.862002" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:13.860647" elapsed="0.178728"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.040379" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.040379" elapsed="0.090395"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.133804" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.132817" elapsed="0.000987"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.229004" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-8.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:14.230514" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-8.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.134815" elapsed="0.095699"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.231529" level="INFO">Length is 87.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.230514" elapsed="0.001015"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:14.232538" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:14.231529" elapsed="0.001009"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.131792" elapsed="0.100746"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.233536" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.232538" elapsed="0.113373"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:13.793889" elapsed="0.553020"/>
+</kw>
+<kw name="Agregar producto al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="inventory_list"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.347908" elapsed="0.027605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.375513" elapsed="0.049236"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.425747" level="INFO">Clicking element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]'.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.425747" elapsed="0.072152"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.498897" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.498897" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.661541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-9.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:14.661541" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-9.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.498897" elapsed="0.162644"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.662550" level="INFO">Length is 87.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.661541" elapsed="0.001009"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:14.662550" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:14.662550" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.497899" elapsed="0.164651"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.346909" elapsed="0.315641"/>
+</kw>
+<kw name="Validar producto agregado al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.663576" elapsed="0.022856"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.702436" level="INFO">${badge} = 1</msg>
+<var>${badge}</var>
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.686432" elapsed="0.016004"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${badge}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.702436" elapsed="0.001031"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.703467" level="INFO">Cantidad en el carrito: 1</msg>
+<arg>Cantidad en el carrito: ${badge}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.703467" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.704470" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.704470" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.843332" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-10.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:14.843332" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-10.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.704470" elapsed="0.138862"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:14.844340" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.844340" elapsed="0.000000"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:14.846330" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:14.845334" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.703467" elapsed="0.142863"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.663576" elapsed="0.182754"/>
+</kw>
+<kw name="Proceder al checkout con producto en el carrito" owner="keywords">
+<kw name="Ir al carrito" owner="keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:14.850330" level="INFO">Opening url 'https://www.saucedemo.com/cart.html'</msg>
+<arg>${urlnav}cart.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.849331" elapsed="0.119240"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>cart.html</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:14.968571" elapsed="0.052547"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.042256" level="INFO">Element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]' is displayed.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.021118" elapsed="0.021138"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.043289" level="INFO">Producto confirmado en el carrito: Sauce Labs Backpack</msg>
+<arg>Producto confirmado en el carrito: ${nombre_producto}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.043289" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.044289" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.044289" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.145261" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-11.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:15.145261" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-11.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.044289" elapsed="0.100972"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.146297" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.145261" elapsed="0.001036"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:15.147289" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:15.146297" elapsed="0.000992"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:15.043289" elapsed="0.104000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.848346" elapsed="0.298943"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.147289" elapsed="0.018023"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.166330" level="INFO">${avanzo} = False</msg>
+<var>${avanzo}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.165312" elapsed="0.001018"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.167330" level="INFO">Clicking element 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.166330" elapsed="0.058184"/>
+</kw>
+<arg>Click Element</arg>
+<arg>id:checkout</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.166330" elapsed="0.058184"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.225510" elapsed="0.010548"/>
+</kw>
+<msg time="2026-08-12T00:44:15.236058" level="INFO">${avanzo} = True</msg>
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.224514" elapsed="0.011544"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.237055" level="INFO">Exiting for loop altogether.</msg>
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.237055" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Execute Javascript</arg>
+<arg>document.getElementById('checkout').click();</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.237055" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.237055" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.238053" elapsed="0.000000"/>
+</kw>
+<var name="${intento}">0</var>
+<status status="PASS" start="2026-08-12T00:44:15.166330" elapsed="0.071723"/>
+</iter>
+<var>${intento}</var>
+<value>3</value>
+<status status="PASS" start="2026-08-12T00:44:15.166330" elapsed="0.071723"/>
+</for>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${avanzo}</arg>
+<arg>Fail</arg>
+<arg>No se pudo avanzar al checkout tras varios intentos</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.238053" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.239053" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.239053" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.333573" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-12.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:15.334577" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-12.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.239053" elapsed="0.095524"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.335574" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.334577" elapsed="0.000997"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:15.336577" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:15.335574" elapsed="0.002006"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:15.238053" elapsed="0.099527"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:14.847333" elapsed="0.490247"/>
+</kw>
+<kw name="Completar información de envío" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@data-test="firstName"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.338575" elapsed="0.019081"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.358656" level="INFO">Typing text 'Romeo' into text field '//input[@data-test="firstName"]'.</msg>
+<arg>//input[@data-test="firstName"]</arg>
+<arg>${nombre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.358656" elapsed="0.111626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.471598" level="INFO">Typing text 'Blanco' into text field '//input[@data-test="lastName"]'.</msg>
+<arg>//input[@data-test="lastName"]</arg>
+<arg>${apellido}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.471598" elapsed="0.121318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.593915" level="INFO">Typing text '18001' into text field '//input[@data-test="postalCode"]'.</msg>
+<arg>//input[@data-test="postalCode"]</arg>
+<arg>${codigo_postal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.592916" elapsed="0.099462"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.693392" level="INFO">Valores ingresados -&gt; nombre: Romeo | apellido: Blanco | codigo_postal: 18001</msg>
+<arg>Valores ingresados -&gt; nombre: ${nombre} | apellido: ${apellido} | codigo_postal: ${codigo_postal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.692378" elapsed="0.001014"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.694388" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.693392" elapsed="0.000996"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.780362" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-13.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:15.780362" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-13.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.694388" elapsed="0.085974"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.781702" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.780362" elapsed="0.001340"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:15.782703" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:15.781702" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:15.693392" elapsed="0.089311"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.783699" level="INFO">${avanzo} = False</msg>
+<var>${avanzo}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.783699" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:15.786701" level="INFO">Clicking element '//input[@data-test="continue"]'.</msg>
+<arg>//input[@data-test="continue"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.785700" elapsed="0.092661"/>
+</kw>
+<arg>Click Element</arg>
+<arg>//input[@data-test="continue"]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.785700" elapsed="0.092661"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-two.html</arg>
+<arg>3s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.879361" elapsed="0.008529"/>
+</kw>
+<msg time="2026-08-12T00:44:15.887890" level="INFO">${avanzo} = True</msg>
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-two.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.879361" elapsed="0.008529"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.888885" level="INFO">Exiting for loop altogether.</msg>
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${hay_error}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//h3[@data-test="error"]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${hay_error}">
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${msg_error}</var>
+<arg>//h3[@data-test="error"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>ERROR EN PANTALLA: ${msg_error}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Execute Javascript</arg>
+<arg>document.querySelector('[data-test="continue"]').click();</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.888885" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-two.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.890396" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:15.890396" elapsed="0.000000"/>
+</kw>
+<var name="${intento}">0</var>
+<status status="PASS" start="2026-08-12T00:44:15.784702" elapsed="0.105694"/>
+</iter>
+<var>${intento}</var>
+<value>3</value>
+<status status="PASS" start="2026-08-12T00:44:15.784702" elapsed="0.105694"/>
+</for>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:15.891409" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.890396" elapsed="0.001013"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.005068" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-14.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:16.006075" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-14.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:15.891409" elapsed="0.114666"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.007067" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.006075" elapsed="0.000992"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:16.008068" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:16.008068" elapsed="0.001508"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:15.890396" elapsed="0.119180"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${avanzo}</arg>
+<arg>Fail</arg>
+<arg>No se pudo avanzar a checkout-step-two tras varios intentos</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.009576" elapsed="0.001520"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:15.338575" elapsed="0.672521"/>
+</kw>
+<kw name="Finalizar compra" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[@data-test="finish"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.012107" elapsed="0.024964"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.059120" level="INFO">Element '//div[@class="summary_total_label"]' is displayed.</msg>
+<arg>//div[@class="summary_total_label"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.037071" elapsed="0.022049"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.059120" level="INFO">Clicking element '//button[@data-test="finish"]'.</msg>
+<arg>//button[@data-test="finish"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.059120" elapsed="0.078229"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-complete.html</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.137349" elapsed="0.008551"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.148896" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.147877" elapsed="0.001019"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.254802" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-15.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:16.254802" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-15.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.148896" elapsed="0.105906"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.255803" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.254802" elapsed="0.001001"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:16.257799" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:16.256800" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:16.145900" elapsed="0.111899"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:16.011096" elapsed="0.246703"/>
+</kw>
+<kw name="Validar compra exitosa" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h2[@data-test="complete-header"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.258817" elapsed="0.045650"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.325082" level="INFO">Element '//h2[@data-test="complete-header"]' is displayed.</msg>
+<arg>//h2[@data-test="complete-header"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.304467" elapsed="0.020615"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.353447" level="INFO">${mensaje} = Thank you for your order!</msg>
+<var>${mensaje}</var>
+<arg>//h2[@data-test="complete-header"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.326086" elapsed="0.027361"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${mensaje}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.353447" elapsed="0.001011"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.355450" level="INFO">Compra confirmada: Thank you for your order!</msg>
+<arg>Compra confirmada: ${mensaje}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.354458" elapsed="0.000992"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.357447" level="INFO">${nombre} = evidencia-TC005 - Checkout compra exitosa-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.356449" elapsed="0.000998"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:16.464280" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC005%20-%20Checkout%20compra%20exitosa-16.png"&gt;&lt;img src="evidencia-TC005%20-%20Checkout%20compra%20exitosa-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:16.464280" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC005 - Checkout compra exitosa-16.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.357447" elapsed="0.106833"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:16.465287" level="INFO">Length is 88.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.464280" elapsed="0.001007"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:16.466285" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:16.465287" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:16.355450" elapsed="0.111840"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:16.258817" elapsed="0.208473"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:44:16.468282" elapsed="2.325195"/>
+</kw>
+<tag>checkout</tag>
+<tag>positivo</tag>
+<tag>TC005</tag>
+<status status="PASS" start="2026-08-12T00:44:11.785396" elapsed="7.010082"/>
+</test>
+<test id="s1-t6" name="TC006 - Checkout código postal vacío" line="58">
+<kw name="Abrir navegador y ingresar a la web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:18.893188" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${urlnav}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:18.892176" elapsed="2.028230"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-08-12T00:44:20.920406" elapsed="0.034202"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:18.891165" elapsed="2.063443"/>
+</kw>
+<kw name="Iniciar sesión con credenciales válidas" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id="user-name"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:20.956588" elapsed="0.145280"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:21.102862" level="INFO">Typing text 'standard_user' into text field '//input[@id="user-name"]'.</msg>
+<arg>//input[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.101868" elapsed="0.153202"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:21.256069" level="INFO">Typing text 'secret_sauce' into text field '//input[@id="password"]'.</msg>
+<arg>//input[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.255070" elapsed="0.102552"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:21.359621" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.359621" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:21.476968" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-8.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:21.476968" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-8.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.360631" elapsed="0.117338"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:21.477969" level="INFO">Length is 92.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.477969" elapsed="0.000000"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:21.478966" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:21.477969" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:21.358626" elapsed="0.120340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:21.478966" level="INFO">Clicking element '//input[@id="login-button"]'.</msg>
+<arg>//input[@id="login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.478966" elapsed="0.150708"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:20.955584" elapsed="0.674090"/>
+</kw>
+<kw name="Agregar producto al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="inventory_list"]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.633209" elapsed="0.033601"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.666810" elapsed="0.043663"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:21.711488" level="INFO">Clicking element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]'.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]/ancestor::div[@class="inventory_item"]//button[contains(@data-test,"add-to-cart")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.711488" elapsed="0.109938"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:21.823439" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.822429" elapsed="0.001010"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.035837" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-9.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:22.035837" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-9.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:21.823439" elapsed="0.212398"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.036839" level="INFO">Length is 92.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.036839" elapsed="0.000000"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:22.038840" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:22.037839" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:21.821426" elapsed="0.217414"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:21.632197" elapsed="0.406643"/>
+</kw>
+<kw name="Validar producto agregado al carrito" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.040351" elapsed="0.028091"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.094619" level="INFO">${badge} = 1</msg>
+<var>${badge}</var>
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.069445" elapsed="0.025174"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${badge}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.094619" elapsed="0.000998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.096617" level="INFO">Cantidad en el carrito: 1</msg>
+<arg>Cantidad en el carrito: ${badge}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.095617" elapsed="0.001999"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.100619" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.099617" elapsed="0.001002"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.263485" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-10.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:22.264484" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-10.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.101128" elapsed="0.163356"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.265482" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.264484" elapsed="0.000998"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:22.266479" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:22.265482" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.098617" elapsed="0.167862"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.038840" elapsed="0.228647"/>
+</kw>
+<kw name="Proceder al checkout con producto en el carrito" owner="keywords">
+<kw name="Ir al carrito" owner="keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.268478" level="INFO">Opening url 'https://www.saucedemo.com/cart.html'</msg>
+<arg>${urlnav}cart.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.268478" elapsed="0.147361"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>cart.html</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.415839" elapsed="0.061192"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.509679" level="INFO">Element '//div[@data-test="inventory-item-name" and normalize-space(text())="Sauce Labs Backpack"]' is displayed.</msg>
+<arg>//div[@data-test="inventory-item-name" and normalize-space(text())="${nombre_producto}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.478027" elapsed="0.031652"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.511190" level="INFO">Producto confirmado en el carrito: Sauce Labs Backpack</msg>
+<arg>Producto confirmado en el carrito: ${nombre_producto}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.510682" elapsed="0.000508"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.513206" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.512199" elapsed="0.001007"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.658326" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-11.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:22.658326" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-11.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.515220" elapsed="0.143106"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.659318" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.658326" elapsed="0.000992"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:22.660318" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:22.659318" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.512199" elapsed="0.148119"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.267487" elapsed="0.392831"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.660836" elapsed="0.023064"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.684911" level="INFO">${avanzo} = False</msg>
+<var>${avanzo}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.684911" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.686902" level="INFO">Clicking element 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.686902" elapsed="0.083825"/>
+</kw>
+<arg>Click Element</arg>
+<arg>id:checkout</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.685901" elapsed="0.084826"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.771742" elapsed="0.006007"/>
+</kw>
+<msg time="2026-08-12T00:44:22.777749" level="INFO">${avanzo} = True</msg>
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.771742" elapsed="0.006007"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.778756" level="INFO">Exiting for loop altogether.</msg>
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.777749" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Execute Javascript</arg>
+<arg>document.getElementById('checkout').click();</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:22.778756" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${avanzo}</var>
+<arg>Wait Until Location Contains</arg>
+<arg>checkout-step-one.html</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:22.778756" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>${avanzo}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-08-12T00:44:22.778756" elapsed="0.000000"/>
+</kw>
+<var name="${intento}">0</var>
+<status status="PASS" start="2026-08-12T00:44:22.685901" elapsed="0.092855"/>
+</iter>
+<var>${intento}</var>
+<value>3</value>
+<status status="PASS" start="2026-08-12T00:44:22.685901" elapsed="0.092855"/>
+</for>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${avanzo}</arg>
+<arg>Fail</arg>
+<arg>No se pudo avanzar al checkout tras varios intentos</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.778756" elapsed="0.000000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.783303" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.781275" elapsed="0.002028"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.895930" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-12.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:22.896936" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-12.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.783303" elapsed="0.113633"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:22.897933" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.896936" elapsed="0.000997"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:22.898929" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:22.897933" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.780261" elapsed="0.118668"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.267487" elapsed="0.631442"/>
+</kw>
+<kw name="Completar información de envío sin código postal" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@data-test="firstName"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.901449" elapsed="0.023083"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:22.925533" level="INFO">Typing text 'Juan' into text field '//input[@data-test="firstName"]'.</msg>
+<arg>//input[@data-test="firstName"]</arg>
+<arg>${nombre}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:22.924532" elapsed="0.114074"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.040617" level="INFO">Typing text 'Perez' into text field '//input[@data-test="lastName"]'.</msg>
+<arg>//input[@data-test="lastName"]</arg>
+<arg>${apellido}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.039632" elapsed="0.105637"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:23.147269" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.147269" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.240477" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-13.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:23.240477" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-13.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.147269" elapsed="0.093208"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:23.241488" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.240477" elapsed="0.001011"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:23.242486" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:23.241488" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:23.146274" elapsed="0.096212"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.243498" level="INFO">Clicking element '//input[@data-test="continue"]'.</msg>
+<arg>//input[@data-test="continue"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.243498" elapsed="0.091701"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:22.900438" elapsed="0.434761"/>
+</kw>
+<kw name="Validar error por código postal vacío" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h3[@data-test="error"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.337197" elapsed="0.028606"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.387541" level="INFO">Element '//h3[@data-test="error"]' is displayed.</msg>
+<arg>//h3[@data-test="error"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.366799" elapsed="0.020742"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.406596" level="INFO">${mensaje_error} = Error: Postal Code is required</msg>
+<var>${mensaje_error}</var>
+<arg>//h3[@data-test="error"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.387541" elapsed="0.019055"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-08-12T00:44:23.406596" level="INFO">Error mostrado: Error: Postal Code is required</msg>
+<arg>Error mostrado: ${mensaje_error}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.406596" elapsed="0.000999"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${mensaje_error}</arg>
+<arg>Postal Code is required</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.407595" elapsed="0.000000"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.413692" level="INFO">${location} = https://www.saucedemo.com/checkout-step-one.html</msg>
+<var>${location}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.408594" elapsed="0.005098"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${location}</arg>
+<arg>checkout-step-two.html</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.413692" elapsed="0.001000"/>
+</kw>
+<kw name="CapturaImagenSinComentarios" owner="common">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-08-12T00:44:23.415692" level="INFO">${nombre} = evidencia-TC006 - Checkout código postal vacío-{index}.png</msg>
+<var>${nombre}</var>
+<arg>evidencia-${TEST NAME}-{index}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.414692" elapsed="0.001000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-08-12T00:44:23.507576" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-14.png"&gt;&lt;img src="evidencia-TC006%20-%20Checkout%20c%C3%B3digo%20postal%20vac%C3%ADo-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-08-12T00:44:23.507576" level="INFO">${filename} = C:\Users\blanc\qa-robot-selenium\result\evidencia-TC006 - Checkout código postal vacío-14.png</msg>
+<var>${filename}</var>
+<arg>${nombre}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.415692" elapsed="0.091884"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-08-12T00:44:23.508573" level="INFO">Length is 93.</msg>
+<arg>${filename}</arg>
+<arg>SeleniumLibrary no devolvió la ruta de la captura.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.507576" elapsed="0.000997"/>
+</kw>
+<kw name="Logging evidence in report" owner="ControldeVariablesLibrary">
+<msg time="2026-08-12T00:44:23.510572" level="INFO">${bodyHTML2} = [{'Titulo': '&lt;h3 align="left"&gt;&lt;font color="black"&gt;Test: TC001 - Login exitoso&lt;/font&gt;&lt;/h3&gt;\n            &lt;p&gt;&amp;nbsp;&lt;/p&gt;', 'Body': '&lt;p&gt;Hora: 00:43:52&lt;/p&gt;\n                &lt;img src="C:\\Users\\blanc\\qa-ro...</msg>
+<arg>${filename}</arg>
+<status status="PASS" start="2026-08-12T00:44:23.509572" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:23.414692" elapsed="0.095880"/>
+</kw>
+<status status="PASS" start="2026-08-12T00:44:23.336208" elapsed="0.174364"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-12T00:44:23.511641" elapsed="2.487666"/>
+</kw>
+<tag>checkout</tag>
+<tag>negativo</tag>
+<tag>TC006</tag>
+<status status="PASS" start="2026-08-12T00:44:18.849602" elapsed="7.149705"/>
+</test>
+<status status="PASS" start="2026-08-12T00:43:48.583172" elapsed="37.462395"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">carrito</stat>
+<stat pass="2" fail="0" skip="0">checkout</stat>
+<stat pass="1" fail="0" skip="0">login</stat>
+<stat pass="2" fail="0" skip="0">negativo</stat>
+<stat pass="4" fail="0" skip="0">positivo</stat>
+<stat pass="1" fail="0" skip="0">TC001</stat>
+<stat pass="1" fail="0" skip="0">TC002</stat>
+<stat pass="1" fail="0" skip="0">TC003</stat>
+<stat pass="1" fail="0" skip="0">TC004</stat>
+<stat pass="1" fail="0" skip="0">TC005</stat>
+<stat pass="1" fail="0" skip="0">TC006</stat>
+</tag>
+<suite>
+<stat name="Regresivo" id="s1" pass="6" fail="0" skip="0">Regresivo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-08-12T00:44:03.520724" level="WARN">Comportamiento detectado: el sistema PERMITE avanzar al checkout con el carrito vacío (no bloquea la acción). Se documenta como hallazgo/riesgo para el reporte.</msg>
+</errors>
+</robot>
